@@ -21,7 +21,7 @@ project(larvecutils VERSION 09.32.01 LANGUAGES CXX C)
 # find_package(cetbuildtools REQUIRED)
 find_package(cetmodules REQUIRED)
 
-list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules $ENV{ART_DIR}/Modules)
+#list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules $ENV{ART_DIR}/Modules)
 
 include(CetCMakeEnv)
 cet_cmake_env()
