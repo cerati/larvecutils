@@ -41,7 +41,7 @@ cet_report_compiler_flags()
 
 # macros for dictionary and simple_plugin
 #include(ArtDictionary)
-#include(ArtMake)
+include(ArtMake)
 #include(BuildPlugins)
 
 # source

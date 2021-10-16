@@ -12,7 +12,7 @@ if(OPENMP_FOUND)
   endif()
 endif(OPENMP_FOUND)
 
-#art_make()
+art_make()
 
 install_headers()
 install_fhicl()
