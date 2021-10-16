@@ -13,19 +13,14 @@
 # ======================================================================
 
 
-# use cmake 3.12 or later
-cmake_minimum_required (VERSION 3.12)
+cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
-project(larvecutils LANGUAGES CXX C)
+project(larvecutils VERSION 09.32.01 LANGUAGES CXX C)
 
 # cetbuildtools contains our cmake modules
 find_package(cetbuildtools REQUIRED)
 
-list(APPEND CMAKE_MODULE_PATH
-     $ENV{CANVAS_ROOT_IO_DIR}/Modules
-     $ENV{ART_DIR}/Modules
-#     ${CMAKE_CURRENT_SOURCE_DIR}/Modules
-)
+list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules $ENV{ART_DIR}/Modules)
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -33,8 +28,7 @@ cet_cmake_env()
 cet_set_compiler_flags(DIAGS CAUTIOUS
   WERROR
   NO_UNDEFINED
-  EXTRA_FLAGS -pedantic
-  EXTRA_CXX_FLAGS -Wno-unused-local-typedefs
+  EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs
 )
 
 cet_report_compiler_flags()
@@ -50,17 +44,14 @@ include(ArtDictionary)
 include(ArtMake)
 include(BuildPlugins)
 
-# add cet_find_library commands here when needed
-
-# ADD SOURCE CODE SUBDIRECTORIES HERE
+# source
 add_subdirectory(larvecutils)
 
 # tests
 add_subdirectory(test)
 
 # ups - table and config files
-# must be AFTER all other subdirectories
 add_subdirectory(ups)
 
-# packaging utility - must be last
+# packaging utility
 include(UseCPack)
