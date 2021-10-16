@@ -17,8 +17,8 @@ cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 project(larvecutils VERSION 09.32.01 LANGUAGES CXX C)
 
-set(fcl_dir job)
-set(gdml_dir gdml)
+#set(fcl_dir job)
+#set(gdml_dir gdml)
 
 # cetbuildtools contains our cmake modules
 find_package(cetmodules REQUIRED)
@@ -35,14 +35,14 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
-find_package( larsoft )
-find_package( nutools )
-find_package( art )
+#find_package( larsoft )
+#find_package( nutools )
+#find_package( art )
 
 # macros for dictionary and simple_plugin
-include(ArtDictionary)
-include(ArtMake)
-include(BuildPlugins)
+#include(ArtDictionary)
+#include(ArtMake)
+#include(BuildPlugins)
 
 # source
 add_subdirectory(larvecutils)
