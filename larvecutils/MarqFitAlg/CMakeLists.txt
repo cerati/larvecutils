@@ -16,4 +16,4 @@ endif(OPENMP_FOUND)
 
 install_headers()
 install_fhicl()
-#install_source()
+install_source()
