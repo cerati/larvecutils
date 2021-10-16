@@ -18,7 +18,8 @@ cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 project(larvecutils VERSION 09.32.01 LANGUAGES CXX C)
 
 # cetbuildtools contains our cmake modules
-find_package(cetbuildtools REQUIRED)
+# find_package(cetbuildtools REQUIRED)
+find_package(cetmodules REQUIRED)
 
 list(APPEND CMAKE_MODULE_PATH $ENV{CANVAS_ROOT_IO_DIR}/Modules $ENV{ART_DIR}/Modules)
 
@@ -34,10 +35,10 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
-find_ups_product( larsoft )
-find_ups_product( nutools )
-find_ups_product( art )
-find_ups_product( cetbuildtools ) # LIBRARY_OUTPUT_DIRECTORY, etc.
+#find_ups_product( larsoft )
+#find_ups_product( nutools )
+#find_ups_product( art )
+#find_ups_product( cetbuildtools ) # LIBRARY_OUTPUT_DIRECTORY, etc.
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)
@@ -51,7 +52,7 @@ add_subdirectory(larvecutils)
 add_subdirectory(test)
 
 # ups - table and config files
-add_subdirectory(ups)
+#add_subdirectory(ups)
 
 # packaging utility
-include(UseCPack)
+#include(UseCPack)
