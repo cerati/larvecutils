@@ -31,17 +31,17 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
-find_package( art )
-find_package( art_root_io )
-find_package(canvas_root_io)
-find_package( canvas )
-find_package( PostgreSQL )
-find_package( Range-v3 )
+#find_package( art )
+#find_package( art_root_io )
+#find_package(canvas_root_io)
+#find_package( canvas )
+#find_package( PostgreSQL )
+#find_package( Range-v3 )
 
 # macros for dictionary and simple_plugin
-include(ArtDictionary)
-include(ArtMake)
-include(BuildPlugins)
+#include(ArtDictionary)
+#include(ArtMake)
+#include(BuildPlugins)
 
 # source
 add_subdirectory(larvecutils)
@@ -49,5 +49,5 @@ add_subdirectory(larvecutils)
 # tests
 #add_subdirectory(test)
 
-add_subdirectory(cmakeConfig)
-cet_cmake_config()
+#add_subdirectory(cmakeConfig)
+#cet_cmake_config()
