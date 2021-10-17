@@ -12,8 +12,9 @@ if(OPENMP_FOUND)
   endif()
 endif(OPENMP_FOUND)
 
-art_make(NO_PLUGINS LIB_LIBRARIES)
-#add_library(larvecutils_MarqFitAlg SHARED MarqFitAlg.cxx)
+#art_make(NO_PLUGINS LIB_LIBRARIES)
+add_library(MarqFitAlg SHARED MarqFitAlg.cxx)
+set_property(TARGET MarqFitAlg PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 install_headers()
 install_fhicl()
