@@ -37,7 +37,7 @@ cet_report_compiler_flags()
 # these are minimum required versions, not the actual product versions
 find_package( larsoft )
 #find_package( nutools )
-find_package( range-v3 )
+find_package( RangeV3 )
 find_package( canvas )
 find_package( art )
 
