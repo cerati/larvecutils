@@ -36,15 +36,15 @@ cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
 find_package( larsoft )
-#find_package( nutools )
-find_package( RangeV3 )
-find_package( canvas )
+find_package( nutools )
 find_package( art )
+#find_package( canvas )
+#find_package( RangeV3 )
 
 # macros for dictionary and simple_plugin
-#include(ArtDictionary)
+include(ArtDictionary)
 include(ArtMake)
-#include(BuildPlugins)
+include(BuildPlugins)
 
 # source
 add_subdirectory(larvecutils)
