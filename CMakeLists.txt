@@ -50,4 +50,4 @@ add_subdirectory(larvecutils)
 #add_subdirectory(test)
 
 add_subdirectory(cmakeConfig)
-
+cet_cmake_config()
