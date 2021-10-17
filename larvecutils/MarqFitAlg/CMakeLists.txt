@@ -15,6 +15,7 @@ endif(OPENMP_FOUND)
 #art_make(NO_PLUGINS LIB_LIBRARIES)
 add_library(MarqFitAlg SHARED MarqFitAlg.cxx)
 set_property(TARGET MarqFitAlg PROPERTY POSITION_INDEPENDENT_CODE ON)
+install(TARGETS MarqFitAlg)
 
 install_headers()
 install_fhicl()
