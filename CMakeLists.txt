@@ -38,8 +38,8 @@ cet_report_compiler_flags()
 find_package( larsoft )
 find_package( nutools )
 find_package( art )
-#find_package( canvas )
-#find_package( RangeV3 )
+find_package( canvas )
+find_package( RangeV3 )
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)
