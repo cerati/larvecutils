@@ -6,9 +6,9 @@ namespace gshf{
 
   /* multi-Gaussian function, number of Gaussians is npar divided by 3 */
   void MarqFitAlg::fgauss(const float yd[], const float p[], const int npar, const int ndat, std::vector<float> &res){
-    //#if defined WITH_OPENMP
-    //#pragma omp simd
-    //#endif
+    #if defined WITH_OPENMP
+    #pragma omp simd
+    #endif
     for(int i=0;i<ndat;i++){
       float yf=0.;
       for(int j=0;j<npar;j+=3){
@@ -20,10 +20,10 @@ namespace gshf{
 
   /* analytic derivatives for multi-Gaussian function in fgauss */
   void MarqFitAlg::dgauss(const float p[], const int npar, const int ndat, std::vector<float> &dydp){
-    //#if defined WITH_OPENMP
-    //#pragma GCC ivdep
-    //#pragma omp simd 
-    //#endif
+    #if defined WITH_OPENMP
+    #pragma ivdep
+    #pragma omp simd 
+    #endif
     for(int i=0;i<ndat;i++){
       for(int j=0;j<npar;j+=3){
 	const float xmu=float(i)-p[j+1];
@@ -53,10 +53,10 @@ namespace gshf{
     int i,j,k;
   
     /* ... Calculate beta */
-    //#if defined WITH_OPENMP
-      //#pragma omp simd
-    //#pragma GCC ivdep
-    //#endif
+    #if defined WITH_OPENMP
+    #pragma omp simd
+    #pragma ivdep
+    #endif
     for(j=0;j<npar;j++){
       beta[j]=0.0;
       for(i=0;i<ndat;i++){
@@ -65,10 +65,10 @@ namespace gshf{
     }
 
     /* ... Calculate alpha */
-    //#if defined WITH_OPENMP
-    //#pragma omp simd
-    //#pragma GCC ivdep
-    //#endif
+    #if defined WITH_OPENMP
+    #pragma omp simd
+    #pragma ivdep
+    #endif
     for (j = 0; j < npar; j++){
       for (k = j; k < npar; k++){
 	alpha[j*npar+k]=0.0;
@@ -192,10 +192,10 @@ namespace gshf{
       for (i = 0; i < npar; i++){
 	if (i != k) alpha[i*npar+k] = -alpha[i*npar+k]/aMax;
       }
-      //#if defined WITH_OPENMP
-      //#pragma omp simd
-	//#pragma GCC ivdep
-      //#endif
+      #if defined WITH_OPENMP
+      #pragma omp simd
+      #pragma ivdep
+      #endif
       for (i = 0; i < npar; i++){
 	for (j = 0; j < npar;j++){
 	  if ((i != k)&&(j!= k))alpha[i*npar+j]=alpha[i*npar+j]+alpha[i*npar+k]*alpha[k*npar+j];
