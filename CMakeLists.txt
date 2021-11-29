@@ -16,7 +16,7 @@
 # use cmake 3.12 or later
 cmake_minimum_required (VERSION 3.19)
 
-project(larvecutils LANGUAGES CXX C)
+project(larvecutils VERSION 09.35.00 LANGUAGES CXX C)
 
 # cetbuildtools contains our cmake modules
 find_package(cetmodules REQUIRED)
