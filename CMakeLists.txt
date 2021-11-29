@@ -14,12 +14,12 @@
 
 
 # use cmake 3.12 or later
-cmake_minimum_required (VERSION 3.12)
+cmake_minimum_required (VERSION 3.19)
 
 project(larvecutils LANGUAGES CXX C)
 
 # cetbuildtools contains our cmake modules
-find_package(cetbuildtools REQUIRED)
+find_package(cetmodules REQUIRED)
 
 list(APPEND CMAKE_MODULE_PATH
      $ENV{CANVAS_ROOT_IO_DIR}/Modules
@@ -40,7 +40,6 @@ cet_set_compiler_flags(DIAGS CAUTIOUS
 cet_report_compiler_flags()
 
 # these are minimum required versions, not the actual product versions
-find_package( cetbuildtools ) # LIBRARY_OUTPUT_DIRECTORY, etc.
 
 # macros for dictionary and simple_plugin
 include(ArtDictionary)
@@ -53,13 +52,13 @@ include(BuildPlugins)
 add_subdirectory(larvecutils)
 
 # tests
-add_subdirectory(test)
+#add_subdirectory(test)
 
 # ups - table and config files
 # must be AFTER all other subdirectories
-add_subdirectory(ups)
+#add_subdirectory(ups)
 
 # packaging utility - must be last
-include(UseCPack)
-
+#include(UseCPack)
 cet_cmake_config()
+
