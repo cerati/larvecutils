@@ -61,3 +61,5 @@ add_subdirectory(ups)
 
 # packaging utility - must be last
 include(UseCPack)
+
+cet_cmake_config()
